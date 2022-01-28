@@ -31,7 +31,7 @@ app.post("/register", async (req, res) => {
 
     if (isExisting) {
 
-      return res.status(409).send("Cannot register: User Already Exists. Please Login");
+      return res.status(409).send("Cannot register: User Already Exists. Please log in");
     }
 
     //Encrypt user password - salt = 10
@@ -71,7 +71,7 @@ app.post("/register", async (req, res) => {
 });
 
 
-app.post("/login", async (req, res) => {
+app.post("/authenticate", async (req, res) => {
 
   try {
 
@@ -121,7 +121,7 @@ app.post("/login", async (req, res) => {
 
 app.post("/welcome", auth, (req, res) => {
 
-  res.status(200).send("Welcome - login successful ");
+  res.status(200).send("Welcome - authenticate successful ");
 
 });
 

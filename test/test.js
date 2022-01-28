@@ -2,9 +2,9 @@
 const request = require('supertest')
 const app = require('../app.js')
 
-describe ('post /login', function(){
+describe ('post /authenticate', function(){
 
-	it('returns 200 with valid login', function(){
+	it('returns 200 with valid authentication', function(){
 
 		const body = {
 
@@ -15,10 +15,10 @@ describe ('post /login', function(){
 
 		return request(app)
 
-			.post('/login')
+			.post('/authenticate')
 
 			.send(body)
-			
+
 			.expect(200)
 	})
 })

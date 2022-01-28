@@ -7,7 +7,7 @@ exports.connect = () => {
   mongoose
 
     .connect(MONGO_URI, {
-    });
+    })
 
     .then(() => {
 
@@ -22,6 +22,6 @@ exports.connect = () => {
       console.error(error);
 
       process.exit(1);
-      
+
     });
 };
